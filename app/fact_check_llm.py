@@ -71,7 +71,7 @@ def check_claim_chain(claim) -> str:
 def check_fact_google(statement: str) -> str:
     """Returns If the  statement given as parameter is not empty
     and returns true or false or partly false using  factchain.
-    in case of partly false as Human
+    in case of partly false ask Human
     If APIChain response is Empty then use other tool"""
     llm = ChatOpenAI(temperature=0)
     api_key = os.environ["API_KEY"]
@@ -82,6 +82,15 @@ def check_fact_google(statement: str) -> str:
         f"Check if it is true for {statement} use  api_key like {api_key}"
     )
 
+
+@tool
+def ask_human(statement: str) -> str:
+      """Returns If the  statement given as parameter is not empty
+    and returns true or false or partly false using  Human input.
+    Use this tool to ask question to Human"""
+      cl.Message(
+            content=f"{statement}",
+        ).send()
 
 def top5_results(query):
     search = GoogleSearchAPIWrapper()
@@ -100,7 +109,8 @@ def initialize_tools(llm):
         check_claim_chain,
         check_fact_google,
         PythonREPLTool(),
-        google_search_tool
+        google_search_tool,
+        ask_human
     ]
     return tools
 
