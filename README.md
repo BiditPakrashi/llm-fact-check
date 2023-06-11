@@ -13,9 +13,34 @@ In addition to these automated processes, we recognize the importance of human v
 By combining the power of LLM, LangChain Agents, and the expertise of human validators, we strive to deliver the most reliable and verified information to our users. Our commitment is to continuously improve our fact-checking methods and enhance the overall user experience.
 
 
-How to Start 
+## Steps to Run the Chat UI
 
-Install Dependency by pipenv install 
+1. Fork this repository or create a code space in GitHub.
 
-Run App by chainlit run fact_check_llm.py 
+2. Install the required Python packages by running the following command in your terminal:
+   ```
+   pipenv install 
+   ```
+
+3. Create a `.env` file in the project directory.
+   ```
+   OPENAI_API_KEY = 'key'
+   API_KEY = 'key'
+   GOOGLE_CSE_ID = 'key'
+   GOOGLE_API_KEY = 'key'
+   ```
+
+4. Run the following command in your terminal to start the chat UI:
+   ```
+    run fact_check_llm.py 
+   ```
+
+   This will launch the chat UI, allowing you to interact with the Falcon LLM model using LangChain.
+
+**Note:** Ensure that you have provided a valid OpenAI key  in the `.env` file, as mentioned in step 3. Please follow https://stackoverflow.com/questions/37083058/programmatically-searching-google-in-python-using-custom-search 
+To create Google Search Envoirment and  GOOGLE_CSE_ID
+
+If you encounter any issues or have questions, please reach out to me .
+
+Enjoy using  LLM as Fact Checker!
 
