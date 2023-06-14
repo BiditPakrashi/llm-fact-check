@@ -35,7 +35,7 @@ By combining the power of LLM, LangChain Agents, and the expertise of human vali
     run fact_check_llm.py 
    ```
 
-   This will launch the chat UI, allowing you to interact with the Falcon LLM model using LangChain.
+   This will launch the chat UI, allowing you to interact with the  LLM model using LangChain.
 
 **Note:** Ensure that you have provided a valid OpenAI key  in the `.env` file, as mentioned in step 3. Please follow https://stackoverflow.com/questions/37083058/programmatically-searching-google-in-python-using-custom-search 
 To create Google Search Envoirment and  GOOGLE_CSE_ID
